@@ -1,0 +1,212 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php if ($_menu): ?>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-main" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <span class="sr-only"><?php echo $this->__('Toggle Navigation') ?></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <?php echo $_menu ?>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<?php endif ?>
+<div class="container">
+    <nav class="site-menu">
+        <ul>
+            <li class="menu-item todo-shopping">
+                <a class="menu-item-link">
+                    <i class="fa fa-chevron-circle-down">
+                    </i>Veja todo shopping</a>
+                <div class="submenu-wrapper">
+                    <div class="submenu-border">
+                        <div class="menu-left-wrapper">
+                            <dl class="list tecnologia">
+                                <dt class="title">Tecnologia</dt>
+                                <dd class="item item-cameras">
+                                    <a href="http://www.walmart.com.br/departamento/cameras-digitais-e-filmadoras/205">
+                                        <span class="item-icon">
+                                        </span>Câmeras e Filmadoras</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="menu-center-wrapper">
+                            <div class="menu-top-wrapper">
+                                <dl class="list casa">
+                                    <dt class="title">Casa</dt>
+                                    <dd class="item item-adega">
+                                        <a href="http://www.walmart.com.br/departamento/adega/4373">
+                                            <span class="item-icon">
+                                            </span>Adega</a>
+                                    </dd>
+                                </dl>
+                                <dl class="list cultura-e-lazer">
+                                    <dt class="title">Cultura e Lazer</dt>
+                                    <dd class="item item-esportes">
+                                        <a href="http://www.walmart.com.br/departamento/esporte-e-lazer/345">
+                                            <span class="item-icon">
+                                            </span>Esporte e Lazer</a>
+                                    </dd>
+                                </dl>
+                                <hr class="separator">
+                                <dl class="list auto-e-pneus">
+                                    <dt class="title">Autos</dt>
+                                    <dd class="item item-automotivo">
+                                        <a href="http://www.walmart.com.br/departamento/automotivo/2903">
+                                            <span class="item-icon">
+                                            </span>Automotivo</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right-wrapper">
+                            <dl class="list moda-e-estilo">
+                                <dt class="title">Estilo e Bem-Estar</dt>
+                                <dd class="item item-beleza">
+                                    <a href="http://www.walmart.com.br/departamento/beleza-e-saude/1">
+                                        <span class="item-icon">
+                                        </span>Beleza e Saúde</a>
+                                </dd>
+                            </dl>
+                            <hr class="separator">
+                            <dl class="list bebes-e-criancas">
+                                <dt class="title">Bebês e Crianças</dt>
+                                <dd class="item item-bebes">
+                                    <a href="http://www.walmart.com.br/departamento/bebes/580">
+                                        <span class="item-icon">
+                                        </span>Bebês</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="menu-bottom-wrapper">
+                            <div class="border">
+                                <ul>
+                                    <li class="bottom-item">
+                                        <a href="http://www.listadecasamento.walmart.com.br/ListaCasamento/Principal">Lista de casamento</a>
+                                    </li>
+                                    <li class="bottom-item spacing">
+                                        <a href="http://www.walmart.com.br/login/sign-up" class="allShoppingSignUp">Cadastre-se</a>
+                                    </li>
+                                    <li class="bottom-item">
+                                        <a href="http://www.walmart.com.br/atendimento/garantia-estendida/">Garantia estendida</a>
+                                    </li>
+                                    <li class="bottom-item last">
+                                        <a href="http://www.walmart.com.br/vale-presente">Vale presente</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+			
+            <li class="menu-item eletronicos">
+                <a class="menu-item-link" href="#">
+                    <span class="icon"><i class="fa fa-mobile-phone"></i>
+                    </span>Telefonia</a>
+                <div class="submenu-wrapper submenu-default">
+                    <div class="submenu-border">
+                        <ul class="categories">
+                            <li class="item">
+                                <a href="#">TVs</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="banner-item">
+						<img src="http://novo.leoeletro/skin/frontend/default/boilerplate/images/banner-menu.jpg" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                        </a>
+                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
+                    </div>
+                </div>
+            </li>
+
+			
+			
+            <li class="menu-item eletronicos">
+                <a class="menu-item-link" href="#">
+                    <span class="icon"><i class="fa fa-gamepad"></i>
+                    </span>Games</a>
+                <div class="submenu-wrapper submenu-default">
+                    <div class="submenu-border">
+                        <ul class="categories">
+                            <li class="item">
+                                <a href="#">TVs</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="banner-item">
+						<img src="http://novo.leoeletro/skin/frontend/default/boilerplate/images/banner-menu.jpg" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                        </a>
+                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
+                    </div>
+                </div>
+            </li>
+            <li class="menu-item eletronicos">
+                <a class="menu-item-link" href="#">
+                    <span class="icon"><i class="fa fa-tablet"></i>
+                    </span>Tablets</a>
+                <div class="submenu-wrapper submenu-default">
+                    <div class="submenu-border">
+                        <ul class="categories">
+                            <li class="item">
+                                <a href="#">TVs</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="banner-item">
+						<img src="http://novo.leoeletro/skin/frontend/default/boilerplate/images/banner-menu.jpg" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                        </a>
+                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
+                    </div>
+                </div>
+            </li>
+            <li class="menu-item seasonal last">
+                <div>
+                    <a href="http://oasc14.247realmedia.com/RealMedia/ads/click_nx.ads/wm-desktop/header/@TopRight" class="banner-item" title="Black Friday">
+                        <img src="http://oasc14.247realmedia.com/RealMedia/ads/adstream_nx.ads/wm-desktop/header/@TopRight" alt="Black Friday" height="40" border="0" width="100">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+<script>
+    
+</script>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Inovarti
+ * @package    Inovarti_Templatedesign
+ * @author     Suporte <suporte@inovarti.com.br>
+ */
+ -->
+<config>
+    <modules>
+        <Inovarti_Templatedesign>
+            <version>0.1.0.0</version>
+        </Inovarti_Templatedesign>
+    </modules>
+    <global>
+        <blocks>
+            <templatedesign>
+                <class>Inovarti_Templatedesign_Block</class>
+            </templatedesign>
+        </blocks>
+        <helpers>
+            <templatedesign>
+                <class>Inovarti_Templatedesign_Helper</class>
+            </templatedesign>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <templatedesign>
+                    <file>inovarti/templatedesign.xml</file>
+                </templatedesign>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <templatedesign>
+                    <files>
+                        <default>Inovarti_Templatedesign.csv</default>
+                    </files>
+                </templatedesign>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <templatedesign>
+            <navigation>
+                <fixed_header>0</fixed_header>
+                <use_navigation>1</use_navigation>
+                <column_items>16</column_items>
+                <department>1</department>
+                <custom_block_width></custom_block_width>
+            </navigation>
+            <cloudzoom>
+                <zoom_width>736</zoom_width>
+                <zoom_height>460</zoom_height>
+                <big_image_width>940</big_image_width>
+                <big_image_height>587</big_image_height>
+            </cloudzoom>
+        </templatedesign>
+    </default>
+</config>

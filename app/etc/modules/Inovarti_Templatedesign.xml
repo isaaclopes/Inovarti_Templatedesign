@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ *
+ * @category   Inovarti
+ * @package    Inovarti_Templatedesign
+ * @author     Suporte <suporte@inovarti.com.br>
+ */
+ -->
+<config>
+    <modules>
+        <Inovarti_Templatedesign>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Inovarti_Templatedesign>
+    </modules>
+</config>

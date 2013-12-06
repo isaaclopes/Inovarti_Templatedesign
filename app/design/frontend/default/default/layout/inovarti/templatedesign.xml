@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Inovarti
+ * @package    Inovarti_Slideshow
+ * @author     Suporte <suporte@inovarti.com.br>
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss" ifconfig="templatedesign/navigation/use_navigation"><stylesheet>css/menu.css</stylesheet></action>
+            <action method="addItem" ifconfig="templatedesign/navigation/use_navigation"><type>skin_js</type><name>components/bootstrap/js/bootstrap.dropdownmenuhover.js</name></action>
+        </reference>
+        <reference name="catalog.topnav">
+             <block type="templatedesign/page_html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
+                <action method="setTemplate"  ifconfig="templatedesign/navigation/use_navigation"><template>inovarti/topmenu.phtml</template></action>
+            </block>   
+            <block type="templatedesign/page_html_topmenu" name="catalog.topnav" template="inovarti/topmenu.phtml"/>
+        </reference>
+    </default>
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addItem" ifconfig="templatedesign/cloudzoom/enabled"><type>skin_css</type><name>css/cloud-zoom.css</name></action>
+            <action method="addItem" ifconfig="templatedesign/cloudzoom/enabled"><type>skin_js</type><name>js/cloud-zoom.1.0.2.js</name></action>
+        </reference>
+        <reference name="product.info">
+            <action method="unsetChild" ifconfig="templatedesign/cloudzoom/enabled"><name>product.info.media</name></action>
+             <block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml">
+                <action method="setTemplate"  ifconfig="templatedesign/cloudzoom/enabled"><template>inovarti/cloudzoom/media.phtml</template></action>
+            </block>    
+        </reference>
+    </catalog_product_view>
+    <review_product_list>
+        <reference name="head">
+            <action method="addItem" ifconfig="templatedesign/cloudzoom/enabled"><type>skin_css</type><name>css/cloud-zoom.css</name></action>
+            <action method="addItem" ifconfig="templatedesign/cloudzoom/enabled"><type>skin_js</type><name>js/cloud-zoom.1.0.2.js</name></action>
+        </reference>
+        <reference name="product.info">
+            <action method="unsetChild" ifconfig="templatedesign/cloudzoom/enabled"><name>product.info.media</name></action>
+             <block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml">
+                <action method="setTemplate"  ifconfig="templatedesign/cloudzoom/enabled"><template>inovarti/cloudzoom/media.phtml</template></action>
+            </block>    
+        </reference>
+    </review_product_list>
+</layout>

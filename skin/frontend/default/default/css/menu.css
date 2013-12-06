@@ -1,0 +1,117 @@
+.site-menu-container{height:59px}
+.site-menu{background:#195d9e;position:relative;z-index:30;float:left;width:100%;border-bottom:solid 2px #f7b428}
+.site-menu.fixed{position:fixed;top:3px}
+.site-menu.animate{-webkit-transition:top .3s ease-out;-moz-transition:top .3s ease-out;-o-transition:top .3s ease-out;transition:top .3s ease-out}
+.menu-item{width:10.9%;height:57px;position:relative;float:left;background:#195d9e;border:solid 1px #124B8E;border-bottom:0;border-left-color:#2E6FAF;text-align:center}
+.menu-item:first-child{border-left:0;position:static}
+.menu-item.last{border-right:0;float:none;overflow:hidden;width:auto}
+.menu-item.active{height:57px}
+.menu-item .menu-item-link{font-size:11px;display:block;height:100%;width:100%;color:#FFF;overflow:hidden;position:relative}
+.menu-item .icon{display:block;font-size:28px;height:28px;line-height:28px;margin:8px auto 0;width:28px;}
+.menu-item.active .menu-item-link{text-shadow:0 0 0;background:#195A99;color:#f6b428}
+.menu-item.active .submenu-wrapper{display:block}
+.menu-item.active .submenu-border{position:relative;height:100%;width:100%;background:#FFF;border-radius:3px;-webkit-box-shadow:0 0 8px rgba(0,0,0,.4);-moz-box-shadow:0 0 8px rgba(0,0,0,.4);box-shadow:0 0 8px rgba(0,0,0,.4)}
+.menu-item.todo-shopping{width:215px}
+.menu-item.todo-shopping .menu-item-link{line-height:57px;font-size:16px;cursor:pointer}
+.menu-item.seasonal div{margin-top:10px}
+@media (min-width:78.75em) and (max-width:83.375em){.menu-item{width:9.2%}
+}
+@media (min-width:83.4375em){.menu-item{width:9.2%}
+}
+.submenu-wrapper{display:none;height:520px;text-align:left;position:absolute;left:0;top:57px;padding-top:4px;z-index:10;width:100%}
+.todo-shopping .submenu-border{position:relative}
+.todo-shopping .submenu-border:before{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-20px;left:20px;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
+.todo-shopping .submenu-border:after{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-19px;left:20px;bottom:auto;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
+.todo-shopping .separator{border:0;height:1px;background:#D7D7D7;min-width:200px;float:left;width:100%}
+.todo-shopping .menu-left-wrapper{height:460px;padding-left:20px;width:23.45679%;float:left;margin-right:2.05761%}
+.todo-shopping .menu-left-wrapper .separator{left:90%}
+@media (min-width:78.75em) and (max-width:83.375em){.todo-shopping .menu-left-wrapper{width:22.5%;float:left;margin-right:1.08696%}
+.todo-shopping .menu-left-wrapper .title{font-size:26px}
+.todo-shopping .menu-left-wrapper .item a{font-size:18px}
+}
+@media (min-width:83.4375em){.todo-shopping .menu-left-wrapper{width:22.5%;float:left;margin-right:1.08696%}
+.todo-shopping .menu-left-wrapper .title{font-size:26px}
+.todo-shopping .menu-left-wrapper .item a{font-size:18px}
+}
+.todo-shopping .menu-right-wrapper{height:460px;padding-right:20px;width:23.45679%;float:right;margin-right:0}
+@media (min-width:78.75em) and (max-width:83.375em){.todo-shopping .menu-right-wrapper{width:22.5%;float:right;margin-right:0}
+.todo-shopping .menu-right-wrapper .title{font-size:26px}
+.todo-shopping .menu-right-wrapper .item a{font-size:18px}
+}
+@media (min-width:83.4375em){.todo-shopping .menu-right-wrapper{width:22.5%;float:right;margin-right:0}
+.todo-shopping .menu-right-wrapper .title{font-size:26px}
+.todo-shopping .menu-right-wrapper .item a{font-size:18px}
+}
+.todo-shopping .menu-center-wrapper{height:460px;width:48.97119%;float:left;margin-right:2.05761%}
+.todo-shopping .menu-center-wrapper .list{width:50%;min-width:234px}
+.todo-shopping .menu-center-wrapper .separator{width:40%}
+@media (min-width:78.75em) and (max-width:83.375em){.todo-shopping .menu-center-wrapper{width:52.82609%;float:left;margin-right:1.08696%}
+.todo-shopping .menu-center-wrapper .item a{padding-top:7px;font-size:18px}
+}
+@media (min-width:83.4375em){.todo-shopping .menu-center-wrapper{width:52.82609%;float:left;margin-right:1.08696%}
+.todo-shopping .menu-center-wrapper .item a{padding-top:7px;font-size:18px}
+}
+.todo-shopping .list{padding:15px 5px 20px;float:left}
+.todo-shopping .title{font-size:23px;padding-bottom:9px}
+.todo-shopping .item{min-height:40px}
+.todo-shopping .item:before{content:" ";display:block;background:#f37b20;width:14px;height:14px;margin-top:14.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
+.todo-shopping .item a{padding:8px 0 7px 35px;display:block;height:100%;width:100%;font-size:15px;color:#1A75CE;position:relative}
+.todo-shopping .item a:hover{color:#f37b20}
+.todo-shopping .item-icon{width:36px;height:36px;margin-right:5px;position:absolute;top:0;left:0}
+.todo-shopping .menu-top-wrapper{height:inherit;overflow:hidden}
+.todo-shopping .menu-bottom-wrapper{position:absolute;bottom:18px;height:32px;width:100%;text-align:center;line-height:32px;padding:0 20px}
+.todo-shopping .menu-bottom-wrapper ul{width:600px;margin:0 auto}
+.todo-shopping .border{border:1px #D7D7D7;border-style:solid none}
+.todo-shopping .bottom-item{display:inline-block}
+.todo-shopping .bottom-item a{color:#999}
+.todo-shopping .bottom-item a:hover{color:#f37b20}
+.todo-shopping .bottom-item.last{float:right}
+.todo-shopping .bottom-item:first-child{float:left}
+.todo-shopping .bottom-item.spacing{margin-right:37px}
+.todo-shopping .item-icon{height:36px;width:36px;display:inline-block}
+.todo-shopping .item-automotivo .item-icon{background-position:0 -2298px;}
+.todo-shopping .item-pneus .item-icon{background-position:0 -662px;}
+.todo-shopping .item-cameras .item-icon{background-position:0 -1820px;}
+.todo-shopping .item-eletronicos .item-icon{background-position:0 -2667px;}
+.todo-shopping .item-games .item-icon{background-position:0 -1858px;}
+.todo-shopping .item-informatica .item-icon{background-position:0 -2505px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-telefonia .item-icon{background-position:0 -2763px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-tablets .item-icon{background-position:0 -2613px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-cameba .item-icon{background-position:0 -2989px;height:37px;width:36px;display:inline-block}
+.todo-shopping .item-moveis-decoracao .item-icon{background-position:0 -2260px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-eletrodomesticos .item-icon{background-position:0 -2116px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-eletroportateis .item-icon{background-position:0 -1972px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-ferramentas .item-icon{background-position:0 -1080px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-casa-seguranca .item-icon{background-position:0 -1896px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-pet-shop .item-icon{background-position:0 -1368px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-produtos-sustentaveis .item-icon{background-position:0 -1648px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-instrumentos-musicais .item-icon{background-position:0 -1610px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-revelacao-digital .item-icon{background-position:0 -1542px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-ud .item-icon{background-position:0 -2575px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-dvds .item-icon{background-position:0 -1504px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-esportes .item-icon{background-position:0 -1232px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-livros .item-icon{background-position:0 -2222px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-papelaria .item-icon{background-position:0 -2865px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-viagens .item-icon{background-position:0 -2010px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-bebes .item-icon{background-position:0 -2437px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-brinquedos .item-icon{background-position:0 -2154px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-beleza .item-icon{background-position:0 -1724px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-moda .item-icon{background-position:0 -2368px;height:37px;width:36px;display:inline-block}
+.todo-shopping .item-relogios .item-icon{background-position:0 -1042px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-adega .item-icon{background-position:0 -1686px;height:36px;width:36px;display:inline-block}
+.todo-shopping .item-ideias-e-muito-mais .item-icon{background-position:0 -2078px;height:36px;width:36px;display:inline-block}
+.submenu-default.submenu-wrapper{height:423px;width:610px;left:-72px}
+.submenu-default .submenu-border{position:relative}
+.submenu-default .submenu-border:before{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-20px;left:124px;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
+.submenu-default .submenu-border:after{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-19px;left:124px;bottom:auto;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
+.submenu-default a{color:#1A75CE}
+.submenu-default a:hover{color:#f37b20}
+.submenu-default .categories{height:364px;width:242px;padding:25px 0 0 20px;overflow:hidden;float:left}
+.submenu-default .picture{float:right;margin:15px;width:333px;height:333px}
+.submenu-default .picture img{display:block;width:333px;height:333px}
+.submenu-default .item{height:33px;line-height:33px}
+.submenu-default .item a{background-color:transparent}
+.submenu-default .item:before{margin-right:17px;content:" ";display:block;background:#f37b20;width:14px;height:14px;margin-top:9.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
+.submenu-default .item:hover a{background-color:#f37b20;display:block;color:#FFF}
+.submenu-default .item:hover:before{margin-right:17px;content:" ";display:block;background:#FFF;width:14px;height:14px;margin-top:9.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
+.submenu-default .footer{width:100%;height:55px;line-height:55px;position:absolute;bottom:0;text-align:center;display:block;border-top:solid 1px #EAE8E8}
