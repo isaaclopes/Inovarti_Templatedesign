@@ -17,7 +17,6 @@
              <block type="templatedesign/page_html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
                 <action method="setTemplate"  ifconfig="templatedesign/navigation/use_navigation"><template>inovarti/topmenu.phtml</template></action>
             </block>   
-            <block type="templatedesign/page_html_topmenu" name="catalog.topnav" template="inovarti/topmenu.phtml"/>
         </reference>
     </default>
     <catalog_product_view>
