@@ -55,8 +55,10 @@
                 <custom_block_width></custom_block_width>
             </navigation>
             <cloudzoom>
-                <zoom_width>736</zoom_width>
-                <zoom_height>460</zoom_height>
+                <width>736</width>
+                <height>460</height>
+                <zoom_width>480</zoom_width>
+                <zoom_height>450</zoom_height>
                 <big_image_width>940</big_image_width>
                 <big_image_height>587</big_image_height>
             </cloudzoom>
