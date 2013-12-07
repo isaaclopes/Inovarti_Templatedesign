@@ -1,4 +1,4 @@
-.nav-menu{background:#195d9e;position:relative;z-index:30;float:left;width:100%;border-bottom:solid 2px #f7b428}
+.nav-menu{background:#195d9e;position:relative;z-index:99999;float:left;width:100%;border-bottom:solid 2px #f7b428}
 .nav-menu.fixed{position:fixed;top:3px}
 .nav-menu.animate{-webkit-transition:top .3s ease-out;-moz-transition:top .3s ease-out;-o-transition:top .3s ease-out;transition:top .3s ease-out}
 .nav-menu-item{width:10.9%;height:57px;position:relative;float:left;background:#195d9e;border:solid 1px #124B8E;border-bottom:0;border-left-color:#2E6FAF;text-align:center}
