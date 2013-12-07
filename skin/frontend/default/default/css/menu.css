@@ -3,7 +3,7 @@
 .nav-menu.animate{-webkit-transition:top .3s ease-out;-moz-transition:top .3s ease-out;-o-transition:top .3s ease-out;transition:top .3s ease-out}
 .nav-menu-item{width:10.9%;height:57px;position:relative;float:left;background:#195d9e;border:solid 1px #124B8E;border-bottom:0;border-left-color:#2E6FAF;text-align:center}
 .nav-menu-item:first-child{border-left:0;position:static}
-.nav-menu-item.last{border-right:0;float:none;overflow:hidden;width:auto}
+.nav-menu-item.seasonal {border-right:0;float:none;overflow:hidden;width:auto}
 .nav-menu-item.open{height:57px}
 .nav-menu-item .nav-menu-item-link{font-size:11px;display:block;height:100%;width:100%;color:#FFF;overflow:hidden;position:relative}
 .nav-menu-item .icon{display:block;font-size:28px;height:28px;line-height:28px;margin:8px auto 0;width:28px;}
