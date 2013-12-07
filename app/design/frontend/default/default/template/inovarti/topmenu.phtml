@@ -51,81 +51,75 @@
         </nav>
     </div>
 <?php endif ?>
-<?php $_menuDesktop = $this->getHtml('level-top'); ?>
+<?php $_menuDesktop = $this->getHtmlDesktop('nav-menu-item'); ?>
 <?php if ($_menuDesktop): ?>
     <div class="container">
-        
-    </div>
-<?php endif ?>
-<div class="container hidden-xs">
-    <nav class="nav-menu">
-        <ul>
-            <li class="nav-menu-item all-department">
-                <a class="nav-menu-item-link">
-                    <i class="fa fa-chevron-circle-down">
-                    </i>Veja todo shopping</a>
-                <div class="nav-submenu">
-                    <div class="nav-submenu-border">
-                        <div class="menu-left-wrapper">
-                            <dl class="list tecnologia">
-                                <dt class="title">Tecnologia</dt>
-                                <dd class="item item-cameras">
-                                    <a href="#">
-                                        <span class="item-icon">
-                                        </span>Câmeras e Filmadoras</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="menu-center-wrapper">
-                            <div class="menu-top-wrapper">
-                                <dl class="list casa">
-                                    <dt class="title">Casa</dt>
-                                    <dd class="item item-adega">
+        <nav class="nav-menu">
+            <ul>
+                <li class="nav-menu-item all-department">
+                    <a class="nav-menu-item-link">
+                        <i class="fa fa-chevron-circle-down">
+                        </i>Veja todo shopping</a>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-border col-md-12">
+                            <div class="col-md-4">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
                                         <a href="#">
                                             <span class="item-icon">
-                                            </span>Adega</a>
-                                    </dd>
-                                </dl>
-                                <dl class="list cultura-e-lazer">
-                                    <dt class="title">Cultura e Lazer</dt>
-                                    <dd class="item item-esportes">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Esporte e Lazer</a>
+                                            </span>Câmeras e Filmadoras</a>
                                     </dd>
                                 </dl>
                                 <hr class="separator">
-                                <dl class="list auto-e-pneus">
-                                    <dt class="title">Autos</dt>
-                                    <dd class="item item-automotivo">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
                                         <a href="#">
                                             <span class="item-icon">
-                                            </span>Automotivo</a>
+                                            </span>Câmeras e Filmadoras</a>
                                     </dd>
                                 </dl>
                             </div>
-                        </div>
-                        <div class="menu-right-wrapper">
-                            <dl class="list moda-e-estilo">
-                                <dt class="title">Estilo e Bem-Estar</dt>
-                                <dd class="item item-beleza">
-                                    <a href="#">
-                                        <span class="item-icon">
-                                        </span>Beleza e Saúde</a>
-                                </dd>
-                            </dl>
-                            <hr class="separator">
-                            <dl class="list bebes-e-criancas">
-                                <dt class="title">Bebês e Crianças</dt>
-                                <dd class="item item-bebes">
-                                    <a href="#">
-                                        <span class="item-icon">
-                                        </span>Bebês</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="menu-bottom-wrapper">
-                            <div class="border">
+                            <div class="col-md-4">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
+                                        <a href="#">
+                                            <span class="item-icon">
+                                            </span>Câmeras e Filmadoras</a>
+                                    </dd>
+                                </dl>
+                                <hr class="separator">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
+                                        <a href="#">
+                                            <span class="item-icon">
+                                            </span>Câmeras e Filmadoras</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-4">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
+                                        <a href="#">
+                                            <span class="item-icon">
+                                            </span>Câmeras e Filmadoras</a>
+                                    </dd>
+                                </dl>
+                                <hr class="separator">
+                                <dl class="list">
+                                    <dt class="title">Tecnologia</dt>
+                                    <dd class="item">
+                                        <a href="#">
+                                            <span class="item-icon">
+                                            </span>Câmeras e Filmadoras</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="footer clearfix">
                                 <ul>
                                     <li class="bottom-item">
                                         <a href="#">Lista de casamento</a>
@@ -143,73 +137,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-
-            <li class="nav-menu-item eletronicos">
-                <a class="nav-menu-item-link" href="#">
-                    <span class="icon"><i class="fa fa-mobile-phone"></i>
-                    </span>Telefonia</a>
-                <div class="nav-submenu nav-submenu-default">
-                    <div class="nav-submenu-border">
-                        <ul class="categories">
-                            <li class="item">
-                                <a href="#">TVs</a>
-                            </li>
-                        </ul>
-                        <a href="#" class="banner-item">
-                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                </li>
+                <?php echo $_menuDesktop ?>
+                <li class="nav-menu-item seasonal last">
+                    <div>
+                        <a href="#" class="banner-item" title="Black Friday">
+                            <img src="http://oasc14.247realmedia.com/RealMedia/ads/adstream_nx.ads/wm-desktop/header/@TopRight" alt="Black Friday" height="40" border="0" width="100">
                         </a>
-                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
                     </div>
-                </div>
-            </li>
-
-
-
-            <li class="nav-menu-item eletronicos">
-                <a class="nav-menu-item-link" href="#">
-                    <span class="icon"><i class="fa fa-gamepad"></i>
-                    </span>Games</a>
-                <div class="nav-submenu nav-submenu-default">
-                    <div class="nav-submenu-border">
-                        <ul class="categories">
-                            <li class="item">
-                                <a href="#">TVs</a>
-                            </li>
-                        </ul>
-                        <a href="#" class="banner-item">
-                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
-                        </a>
-                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-menu-item eletronicos">
-                <a class="nav-menu-item-link" href="#">
-                    <span class="icon"><i class="fa fa-tablet"></i>
-                    </span>Tablets</a>
-                <div class="nav-submenu nav-submenu-default">
-                    <div class="nav-submenu-border">
-                        <ul class="categories">
-                            <li class="item">
-                                <a href="#">TVs</a>
-                            </li>
-                        </ul>
-                        <a href="#" class="banner-item">
-                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
-                        </a>
-                        <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-menu-item seasonal last">
-                <div>
-                    <a href="#" class="banner-item" title="Black Friday">
-                        <img src="http://oasc14.247realmedia.com/RealMedia/ads/adstream_nx.ads/wm-desktop/header/@TopRight" alt="Black Friday" height="40" border="0" width="100">
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<?php endif ?>

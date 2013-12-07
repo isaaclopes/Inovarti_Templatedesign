@@ -32,28 +32,28 @@
 
                 $parent.hover(function(event) {
                     // so a neighbor can't open the dropdown
-                    if(!$parent.hasClass('active') && !$this.is(event.target)) {
+                    if(!$parent.hasClass('open') && !$this.is(event.target)) {
                         return true;
                     }
 
                     if(settings.instantlyCloseOthers === true)
-                        $allDropdownmenus.removeClass('active');
+                        $allDropdownmenus.removeClass('open');
 
                     window.clearTimeout(timeout);
-                    $parent.addClass('active');
+                    $parent.addClass('open');
                 }, function() {
                     timeout = window.setTimeout(function() {
-                        $parent.removeClass('active');
+                        $parent.removeClass('open');
                     }, settings.delay);
                 });
 
                 // this helps with button groups!
                 $this.hover(function() {
                     if(settings.instantlyCloseOthers === true)
-                        $allDropdownmenus.removeClass('active');
+                        $allDropdownmenus.removeClass('open');
 
                     window.clearTimeout(timeout);
-                    $parent.addClass('active');
+                    $parent.addClass('open');
                 });
             });
         };
