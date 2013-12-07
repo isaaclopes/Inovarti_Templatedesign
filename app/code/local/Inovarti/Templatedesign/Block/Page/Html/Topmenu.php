@@ -6,7 +6,7 @@
  * @package    Inovarti_Templatedesign
  * @author     Suporte <suporte@inovarti.com.br>
  */
-class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Html_Topmenu {
+class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Html_Topmenu  {
 
     /**
      * Recursively generates top menu html from data that is specified in $menuTree
@@ -37,7 +37,6 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
 
             $anchorClasses = array();
             $anchorAttributes = array();
-            $anchorSubAttributes = array();
 
             $outermostClassCode = '';
             $outermostClass = $menuTree->getOutermostClass();
@@ -49,27 +48,20 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
 
             if ($child->hasChildren()) {
                 $anchorClasses[] = 'dropdown-toggle';
-                $anchorSubAttributes[] = array('id', $child->getId());
-                
+
                 if ($childLevel == 0) {
-                    $anchorAttributes[] = array('data-toggle', 'dropdown');
-                    //$anchorAttributes[] = array('data-hover', 'dropdown');
-                    $anchorAttributes[] = array('data-target','#'.$child->getId());
-                    $childrenWrapClass.=' dropdown-menu ';
+                    // $anchorAttributes[] = array('data-toggle', 'dropdown');
+                    $anchorAttributes[] = array('data-hover', 'dropdown');
                 }
             }
 
             // Add list item
-            $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . ' class="dropdown">';
+            $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
 
             array_walk($anchorAttributes, function(&$attribute) {
                         $attribute = $attribute[0] . '="' . $attribute[1] . '"';
-            });
-            
-            array_walk($anchorSubAttributes, function(&$attributesub) {
-                        $attributesub = $attributesub[0] . '="' . $attributesub[1] . '"';
-            });
-            
+                    });
+
             // Add anchor item
             $html .= '<a href="' . $child->getUrl() . '" class="' . implode(' ', $anchorClasses) . '"' . implode(' ', $anchorAttributes) . '>';
 
@@ -77,17 +69,17 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
             $html .= '<span>' . $this->escapeHtml($child->getName()) . '</span>';
 
             if ($child->hasChildren() && $childLevel == 0) {
-                $html .= '<span class="caret"></span>';
+                //$html .= '<span class="caret"></span>';
             }
 
             // Close anchor item
             $html .= '</a>';
-
+            /*
             if ($child->hasChildren()) {
-                $html .= '<ul class="level' . $childLevel . ' ' . $childrenWrapClass . '"' . implode(' ', $anchorSubAttributes) . ' style="display:none">';
+                $html .= '<ul class="level' . $childLevel . ' ' . $childrenWrapClass . '">';
                 $html .= $this->_getHtml($child, $childrenWrapClass);
                 $html .= '</ul>';
-            }
+            }*/
             $html .= '</li>';
 
             $counter++;

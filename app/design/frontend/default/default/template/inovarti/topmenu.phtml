@@ -31,9 +31,9 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 ?>
-<?php $_menu = $this->getHtml('level-top') ?>
+<?php $_menu = $this->getHtml('level-top'); ?>
 <?php if ($_menu): ?>
-    <div class="container">
+    <div class="container visible-xs">
         <nav class="navbar navbar-default navbar-main" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -51,7 +51,13 @@
         </nav>
     </div>
 <?php endif ?>
-<div class="container">
+<?php $_menuDesktop = $this->getHtml('level-top'); ?>
+<?php if ($_menuDesktop): ?>
+    <div class="container">
+        
+    </div>
+<?php endif ?>
+<div class="container hidden-xs">
     <nav class="nav-menu">
         <ul>
             <li class="nav-menu-item all-department">
@@ -139,7 +145,7 @@
                     </div>
                 </div>
             </li>
-			
+
             <li class="nav-menu-item eletronicos">
                 <a class="nav-menu-item-link" href="#">
                     <span class="icon"><i class="fa fa-mobile-phone"></i>
@@ -152,15 +158,15 @@
                             </li>
                         </ul>
                         <a href="#" class="banner-item">
-						<img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
                         </a>
                         <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
                     </div>
                 </div>
             </li>
 
-			
-			
+
+
             <li class="nav-menu-item eletronicos">
                 <a class="nav-menu-item-link" href="#">
                     <span class="icon"><i class="fa fa-gamepad"></i>
@@ -173,7 +179,7 @@
                             </li>
                         </ul>
                         <a href="#" class="banner-item">
-						<img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
                         </a>
                         <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
                     </div>
@@ -191,7 +197,7 @@
                             </li>
                         </ul>
                         <a href="#" class="banner-item">
-						<img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
+                            <img src="<?php echo $this->getSkinUrl('images/banner-menu.jpg'); ?>" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">
                         </a>
                         <a href="#" class="footer clearfix">Veja toda a loja de Eletrônicos</a>
                     </div>
@@ -207,6 +213,3 @@
         </ul>
     </nav>
 </div>
-<script>
-    
-</script>
