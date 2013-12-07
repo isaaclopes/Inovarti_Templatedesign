@@ -71,6 +71,6 @@
         }
         $(document).ready(function() {
             // apply dropdownHover to all elements with the data-hover="dropdown" attribute
-            $('.menu-item-link').dropdownmenuHover();
+            $('.nav-menu-item-link').dropdownmenuHover();
         });
     })(jQuery, this);
