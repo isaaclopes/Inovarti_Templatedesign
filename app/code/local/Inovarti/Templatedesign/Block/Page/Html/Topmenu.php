@@ -120,7 +120,7 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
         $childrenCount = $children->count();
 
         $parentPositionClass = $menuTree->getPositionClass();
-        $itemPositionClassPrefix = $parentPositionClass ? $childrenWrapClass .' ' . $parentPositionClass : '';
+        $itemPositionClassPrefix = $parentPositionClass ? $childrenWrapClass .' ' . $parentPositionClass : $childrenWrapClass;
 
         foreach ($children as $child) {
 
@@ -139,11 +139,8 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
                 $child->setClass($outermostClass);
             }
             if ($child->hasChildren() && $childLevel > 0) {
-                
                 $outermostClassCode = '';
-                $child->setClass($outermostClass);
             }
-            
             
 
             $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
@@ -162,7 +159,7 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
                 $html .=            $this->_getHtmlDesktop($child, 'item');
                 $html .= '      </ul>';
                 $html .= '      <a href="#" class="banner-item col-md-6">';
-                $html .= '          <img src="'.$this->getSkinUrl('images/banner-menu.jpg').'" alt="Leoeletro" class="lazy-image-menu"  height="333" border="0" width="333">';
+                $html .= '          <img src="'.$this->getSkinUrl('images/banner-menu.jpg').'" alt="Leoeletro" class="lazy-image-menu"  border="0">';
                 $html .= '      </a>';
                 $html .=        $allCategory;
                 $html .= '  </div>';

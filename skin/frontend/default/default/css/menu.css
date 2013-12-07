@@ -46,8 +46,7 @@
 .nav-submenu-default a{color:#1A75CE}
 .nav-submenu-default a:hover{color:#f37b20}
 .nav-submenu-default .categories{padding:25px 0 0 0;overflow:hidden;}
-.nav-submenu-default .picture{float:right;margin:15px;width:333px;height:333px}
-.nav-submenu-default .picture img{display:block;width:333px;height:333px}
+.nav-submenu-default .banner-item img{display:block;width:100%}
 .nav-submenu-default .item{height:33px;line-height:33px}
 .nav-submenu-default .item a{background-color:transparent}
 .nav-submenu-default .item:before{margin-right:17px;content:" ";display:block;background:#f37b20;width:14px;height:14px;margin-top:9.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
