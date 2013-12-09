@@ -56,69 +56,18 @@
     <div class="container hidden-xs">
         <nav class="nav-menu">
             <ul>
+                <?php if ($department = Mage::getStoreConfig('templatedesign/navigation/department')): ?>
                 <li class="nav-menu-item all-department">
                     <a class="nav-menu-item-link">
                         <i class="fa fa-chevron-circle-down">
-                        </i>Veja todo shopping</a>
+                        </i><?php echo $this->__('Veja todo shopping') ?></a>
                     <div class="nav-submenu">
                         <div class="nav-submenu-border col-md-12">
-                            <div class="col-md-4">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                                <hr class="separator">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div class="col-md-4">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                                <hr class="separator">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div class="col-md-4">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                                <hr class="separator">
-                                <dl class="list">
-                                    <dt class="title">Tecnologia</dt>
-                                    <dd class="item">
-                                        <a href="#">
-                                            <span class="item-icon">
-                                            </span>Câmeras e Filmadoras</a>
-                                    </dd>
-                                </dl>
-                            </div>
+                            
+                            <?php $_menuAllDesktop = $this->getHtmlAllDesktop('nav-menu-item'); ?>
+                            <?php if ($_menuAllDesktop): ?>
+                            <?php echo $_menuAllDesktop ?>
+                            <?php endif ?>
                             <div class="footer clearfix">
                                 <ul>
                                     <li class="bottom-item">
@@ -138,14 +87,8 @@
                         </div>
                     </div>
                 </li>
+                <?php endif; ?>
                 <?php echo $_menuDesktop ?>
-                <li class="nav-menu-item seasonal">
-                    <div>
-                        <a href="#" class="banner-item" title="Black Friday">
-                            <img src="http://oasc14.247realmedia.com/RealMedia/ads/adstream_nx.ads/wm-desktop/header/@TopRight" alt="Black Friday" height="40" border="0" width="100">
-                        </a>
-                    </div>
-                </li>
             </ul>
         </nav>
     </div>

@@ -3,7 +3,7 @@
 .nav-menu.animate{-webkit-transition:top .3s ease-out;-moz-transition:top .3s ease-out;-o-transition:top .3s ease-out;transition:top .3s ease-out}
 .nav-menu-item{width:10.9%;height:57px;position:relative;float:left;background:#195d9e;border:solid 1px #124B8E;border-bottom:0;border-left-color:#2E6FAF;text-align:center}
 .nav-menu-item:first-child{border-left:0;position:static}
-.nav-menu-item.seasonal {border-right:0;float:none;overflow:hidden;width:auto}
+.nav-menu-item.last {border-right:0;}
 .nav-menu-item.open{height:57px}
 .nav-menu-item .nav-menu-item-link{font-size:11px;display:block;height:100%;width:100%;color:#FFF;overflow:hidden;position:relative}
 .nav-menu-item .icon{display:block;font-size:28px;height:28px;line-height:28px;margin:8px auto 0;width:28px;}
@@ -12,7 +12,6 @@
 .nav-menu-item.open .nav-submenu-border{position:relative;height:100%;width:100%;background:#FFF;border-radius:3px;-webkit-box-shadow:0 0 8px rgba(0,0,0,.4);-moz-box-shadow:0 0 8px rgba(0,0,0,.4);box-shadow:0 0 8px rgba(0,0,0,.4)}
 .nav-menu-item.all-department{width:215px}
 .nav-menu-item.all-department .nav-menu-item-link{line-height:57px;font-size:16px;cursor:pointer}
-.nav-menu-item.seasonal div{margin-top:10px}
 @media (max-width: 768px) {
   .all-department{display: none;}
 }
@@ -22,13 +21,12 @@
 .all-department .nav-submenu-border:before{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-20px;left:20px;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
 .all-department .nav-submenu-border:after{content:"\00a0";display:block;position:absolute;width:0;height:0;top:-19px;left:20px;bottom:auto;border-width:10px;border-style:solid;border-color:transparent transparent #fff}
 .all-department .separator{border:0;height:1px;background:#D7D7D7;min-width:200px;float:left;width:100%}
-.all-department .list{padding:15px 5px 20px;float:left;width: 100%;}
+.all-department .list{float: left;margin-bottom: 0;padding: 15px 5px 0;width: 100%;}
 .all-department .title{font-size:23px;padding-bottom:9px}
-.all-department .item{min-height:40px}
-.all-department .item:before{content:" ";display:block;background:#f37b20;width:14px;height:14px;margin-top:14.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
-.all-department .item a{padding:8px 0 7px 35px;display:block;height:100%;width:100%;font-size:15px;color:#1A75CE;position:relative}
+.all-department .item{min-height:30px}
+.all-department .item:before{content:" ";display:block;background:#f37b20;width:14px;height:14px;margin-top:9.5px;float:left;-webkit-border-radius:14px;-moz-border-radius:14px;-ms-border-radius:14px;-o-border-radius:14px;border-radius:14px;left:8px;position:relative}
+.all-department .item a{color: #1A75CE;display: block;font-size: 15px;height: 100%;line-height: 30px;padding: 0 0 0 35px;position: relative;width: 100%;}
 .all-department .item a:hover{color:#f37b20}
-.all-department .item-icon{width:36px;height:36px;margin-right:5px;position:absolute;top:0;left:0}
 .all-department .footer{position:absolute;bottom:18px;height:32px;width:97.2%;text-align:center;line-height:32px;padding:0 20px;border-top:solid 1px #EAE8E8}
 .all-department .footer ul{width:600px;margin:0 auto}
 .all-department .border{border:1px #D7D7D7;border-style:solid none}

@@ -121,7 +121,10 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
 
         $parentPositionClass = $menuTree->getPositionClass();
         $itemPositionClassPrefix = $parentPositionClass ? $childrenWrapClass .' ' . $parentPositionClass : $childrenWrapClass;
+        
+        $column_items = Mage::getStoreConfig('templatedesign/navigation/column_items');
 
+                
         foreach ($children as $child) {
 
             $child->setLevel($childLevel);
@@ -142,19 +145,19 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
                 $outermostClassCode = '';
             }
             
-
             $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
             $html .= '<a href="' . $child->getUrl() . '" ' . $outermostClassCode . '>';
             
             if ($childLevel == 0) {
                 $allCategory = '<a href="' . $child->getUrl() . '" class="footer clearfix">Veja toda a loja de '.$this->escapeHtml($child->getName()).'</a>';
                 if ($img = $this->getThumbnailUrl($child)){
-                    $html .= '<span class="icon"><img src="'.$img.'" alt="'.$this->escapeHtml($child->getName()).'" /></span>';
+                    $html .= '<span class="icon"><img src="'.$img.'" alt="'.$this->escapeHtml(strtolower($child->getName())).'" /></span>';
                 }else{
-                    $html .= '<span class="icon"><i class="fa fa-mobile-phone"></i></span>';                    
+                    //$html .= '<span class="icon"><i class="fa '.$this->escapeHtml(strtolower($child->getName())).'"></i></span>';
+                    $html .= '<span class="icon"><i class="fa fa-mobile-phone"></i></span>';
                 }
             }
-            $html .= $this->escapeHtml($child->getName()) . '</a>';
+            $html .= $this->escapeHtml($child->getName()) .'</a>';
 
             if ($child->hasChildren()) {
                 $html .= '<div class="nav-submenu nav-submenu-default">';
@@ -171,12 +174,91 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
             }
             $html .= '</li>';
 
+            if ($childLevel==1){
+                if (is_numeric($column_items) && $counter ==$column_items){
+                    break;
+                }
+            }
+
             $counter++;
         }
 
         return $html;
     }
+    public function getHtmlAllDesktop($outermostClass = '', $childrenWrapClass = '') {
+        Mage::dispatchEvent('page_block_html_topmenu_gethtml_before', array(
+            'menu' => $this->_menu,
+            'block' => $this
+        ));
 
+        $this->_menu->setOutermostClass($outermostClass);
+        $this->_menu->setChildrenWrapClass($childrenWrapClass);
+
+        $html = $this->_getHtmlAllDesktop($this->_menu, $childrenWrapClass);
+
+        Mage::dispatchEvent('page_block_html_topmenu_gethtml_after', array(
+            'menu' => $this->_menu,
+            'html' => $html
+        ));
+
+        return $html;
+    }
+    protected function _getHtmlAllDesktop(Varien_Data_Tree_Node $menuTree, $childrenWrapClass) {
+        $html = '';
+
+        $children = $menuTree->getChildren();
+        $parentLevel = $menuTree->getLevel();
+        $childLevel = is_null($parentLevel) ? 0 : $parentLevel + 1;
+
+        $counter = 1;
+        $childrenCount = $children->count();
+
+        $parentPositionClass = $menuTree->getPositionClass();
+        $itemPositionClassPrefix = $parentPositionClass ? $childrenWrapClass .' ' . $parentPositionClass : $childrenWrapClass;
+        $column_items = Mage::getStoreConfig('templatedesign/navigation/column_items') /2;
+
+        foreach ($children as $child) {
+
+            $child->setLevel($childLevel);
+            $child->setIsFirst($counter == 1);
+            $child->setIsLast($counter == $childrenCount);
+            $child->setPositionClass($itemPositionClassPrefix);
+
+            $outermostClassCode = '';
+            $outermostClass = $menuTree->getOutermostClass();
+            
+            if ($child->hasChildren() && $childLevel > 0) {
+                $outermostClassCode = '';
+            }
+             if ($childLevel==0){
+                 $html .= '<div class="col-md-4">';
+                 $html .= ' <dl class="list">';
+                 $html .= ' <dt class="title">'.$this->escapeHtml($child->getName()).'</dt>';
+             }
+
+            //$html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
+            //$html .= '<a href="' . $child->getUrl() . '" ' . $outermostClassCode . '>';
+
+            //$html .= $this->escapeHtml($child->getName()) .'</a>';
+             if ($childLevel==1){
+                $html .= '<dd class="' . $childrenWrapClass . '"><a href="' . $child->getUrl() . '">'.$this->escapeHtml($child->getName()).'</a></dd>';
+             }
+            if ($child->hasChildren()) {
+                $html .=   $this->_getHtmlAllDesktop($child, 'item');
+            }
+            if ($childLevel==0){
+            $html .= '<hr class="separator"></dl></div>';
+            }
+            if ($childLevel==1){
+                if (is_numeric($column_items) && $counter ==$column_items){
+                    break;
+                }
+            }
+            $counter++;
+        }
+
+        return $html;
+    }
     /**
      * Returns array of menu item's classes
      *
