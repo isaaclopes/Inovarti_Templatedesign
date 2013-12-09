@@ -148,7 +148,11 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
             
             if ($childLevel == 0) {
                 $allCategory = '<a href="' . $child->getUrl() . '" class="footer clearfix">Veja toda a loja de '.$this->escapeHtml($child->getName()).'</a>';
-                $html .= '<span class="icon"><i class="fa fa-mobile-phone"></i></span>';
+                if ($img = $this->getThumbnailUrl($child)){
+                    $html .= '<span class="icon"><img src="'.$img.'" alt="'.$this->escapeHtml($child->getName()).'" /></span>';
+                }else{
+                    $html .= '<span class="icon"><i class="fa fa-mobile-phone"></i></span>';                    
+                }
             }
             $html .= $this->escapeHtml($child->getName()) . '</a>';
 
@@ -224,5 +228,13 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
 
         return $classes;
     }*/
-
+    public function getThumbnailUrl($child)
+      {
+          $url = false;
+          if ($image = $child->getData('thumbnail')) {
+              $url = Mage::getBaseUrl('media').'catalog/category/'.$image;
+          }
+          return $url;
+      }
+      
 }

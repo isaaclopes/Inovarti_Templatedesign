@@ -24,6 +24,16 @@
                 <class>Inovarti_Templatedesign_Helper</class>
             </templatedesign>
         </helpers>
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <catalog_add_topmenu_items>
+                        <class>Inovarti_Templatedesign_Model_Observer</class>
+                        <method>addCatalogToTopmenuItems</method>
+                    </catalog_add_topmenu_items>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
     </global>
     <frontend>
         <layout>
