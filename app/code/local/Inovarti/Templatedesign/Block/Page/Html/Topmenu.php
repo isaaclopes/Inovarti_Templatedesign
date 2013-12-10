@@ -165,9 +165,13 @@ class Inovarti_Templatedesign_Block_Page_Html_Topmenu extends Mage_Page_Block_Ht
                 $html .= '      <ul class="categories col-md-6">';
                 $html .=            $this->_getHtmlDesktop($child, 'item');
                 $html .= '      </ul>';
-                $html .= '      <a href="#" class="banner-item col-md-6">';
-                $html .= '          <img src="'.$this->getSkinUrl('images/banner-menu.jpg').'" alt="Leoeletro" class="lazy-image-menu"  border="0">';
-                $html .= '      </a>';
+                
+                $staticBlock = trim($this->getLayout()->createBlock('cms/block')->setBlockId(strtolower($child->getData('url_key')))->toHtml());
+                if (!empty($staticBlock)) {
+                   $html .= '<span class="banner-item col-md-6">';
+                    $html .= $staticBlock;
+                    $html .= '</span>';
+                }
                 $html .=        $allCategory;
                 $html .= '  </div>';
                 $html .= '</div>';

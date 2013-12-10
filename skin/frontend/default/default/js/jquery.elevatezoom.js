@@ -64,7 +64,12 @@ if ( typeof Object.create !== 'function' ) {
 
             self.refresh( 1 );
 
-
+            //HOVER SETTINGS
+            if(self.options.zoomActivation == 'hover') {
+                $('#'+self.options.gallery + ' a').hover( function(e) { 
+                    $(this).trigger("click");
+                });
+            }
 
             //Create the image swap from the gallery 
             $('#'+self.options.gallery + ' a').click( function(e) { 

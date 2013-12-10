@@ -49,6 +49,7 @@ class Inovarti_Templatedesign_Model_Observer {
                 'name' => $category->getName(),
                 'id' => $nodeId,
                 'url' => Mage::helper('catalog/category')->getCategoryUrl($category),
+                'url_key' => $category->getUrlKey(),
                 'is_active' => $this->_isActiveMenuCategory($category),
                 'thumbnail' => Mage::getModel('catalog/category')->load($category->getId())->getThumbnail()
             );

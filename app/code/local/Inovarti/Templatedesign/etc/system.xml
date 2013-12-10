@@ -32,16 +32,6 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <fixed_header translate="label">
-                            <label>Enable fixed header</label>
-                            <comment>If enabled - header will always stay at the top</comment>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>0</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </fixed_header>
                         <use_navigation translate="label">
                             <label>Use Theme Navigation</label>
                             <comment>Select NO to use default magento navigation</comment>
@@ -70,15 +60,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </department>
-                        <custom_block_width translate="label">
-                            <label>Custom Navigation Block width</label>
-                            <comment><![CDATA[Define custom block width in px]]></comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>70</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </custom_block_width>
                     </fields>
                 </navigation>
                 <social translate="label">

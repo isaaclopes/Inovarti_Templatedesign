@@ -58,11 +58,9 @@
     <default>
         <templatedesign>
             <navigation>
-                <fixed_header>0</fixed_header>
                 <use_navigation>1</use_navigation>
                 <column_items>16</column_items>
                 <department>1</department>
-                <custom_block_width></custom_block_width>
             </navigation>
             <cloudzoom>
                 <width>736</width>
