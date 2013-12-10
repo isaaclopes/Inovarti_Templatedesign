@@ -71,6 +71,10 @@
                 <zoom_height>450</zoom_height>
                 <big_image_width>940</big_image_width>
                 <big_image_height>587</big_image_height>
+                <position>lens</position>
+                <lens_opacity>0.4</lens_opacity>
+                <tint_opacity>0.4</tint_opacity>
+                <tint_color>#333</tint_color>
             </cloudzoom>
         </templatedesign>
     </default>

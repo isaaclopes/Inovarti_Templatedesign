@@ -27,40 +27,12 @@ $config = Mage::getStoreConfig('templatedesign');
 
 //cloud Zoom config
 $config['cloudzoom']['position'] = empty($config['cloudzoom']['position']) ? 'right' : $config['cloudzoom']['position'];
-$config['cloudzoom']['lens_opacity'] = intval($config['cloudzoom']['lens_opacity']) / 100;
-$config['cloudzoom']['tint_opacity'] = intval($config['cloudzoom']['tint_opacity']) / 100;
+$config['cloudzoom']['lens_opacity'] = empty($config['cloudzoom']['lens_opacity']) ? '0.4' : $config['cloudzoom']['lens_opacity'];
+$config['cloudzoom']['tint_opacity'] = empty($config['cloudzoom']['tint_opacity']) ? '0.4' : $config['cloudzoom']['tint_opacity'];
 $config['cloudzoom']['zoom_width'] = empty($config['cloudzoom']['zoom_width']) ? '736' : $config['cloudzoom']['zoom_width'];
 $config['cloudzoom']['zoom_height'] = empty($config['cloudzoom']['zoom_height']) ? '460' : $config['cloudzoom']['zoom_height'];
 $config['cloudzoom']['big_image_width'] = empty($config['cloudzoom']['big_image_width']) ? '736' : $config['cloudzoom']['big_image_width'];
 $config['cloudzoom']['big_image_height'] = empty($config['cloudzoom']['big_image_height']) ? '587' : $config['cloudzoom']['big_image_height'];
-?>
-
-<?php if ($config['cloudzoom']['position'] == 'inside') : ?>
-    <style>
-        .cloud-zoom-big { margin:0; -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; }
-    </style>
-    <?php
-endif;
-
-$cloudZoom = array(
-    "position:'" . $config['cloudzoom']['position'] . "'",
-    "showTitle:false",
-    "lensOpacity:" . $config['cloudzoom']['lens_opacity']
-);
-if ($config['cloudzoom']['zoom_width'] > 0) {
-    $cloudZoom[] = "zoomWidth:" . $config['cloudzoom']['zoom_width'];
-}
-if ($config['cloudzoom']['zoom_height'] > 0) {
-    $cloudZoom[] = "zoomHeight:" . $config['cloudzoom']['zoom_height'];
-}
-
-if ($config['cloudzoom']['tint_color']) {
-    $cloudZoom[] = "tint:'" . $config['cloudzoom']['tint_color'] . "',tintOpacity:" . $config['cloudzoom']['tint_opacity'];
-}
-if ($config['cloudzoom']['soft_focus'] > 0) {
-    $cloudZoom[] = "softFocus:" . $config['cloudzoom']['soft_focus'];
-}
-
 if (empty($config['cloudzoom']['big_image_width']) || empty($config['cloudzoom']['big_image_height'])) {
     if (empty($config['cloudzoom']['big_image_width']) || $config['cloudzoom']['big_image_width'] > 1200) {
         $config['cloudzoom']['big_image_width'] = 1200;
@@ -70,37 +42,85 @@ if (empty($config['cloudzoom']['big_image_width']) || empty($config['cloudzoom']
     }
 }
 
+switch ($config['cloudzoom']['position']) {
+    case "top":
+        $zoomWindowPosition = "14";
+        $zoomType = "window";
+        break;
+    case "right":
+        $zoomWindowPosition = "2";
+        $zoomType = "window";
+        break;
+    case "bottom":
+        $zoomWindowPosition = "6";
+        $zoomType = "window";
+        break;
+    case "left":
+        $zoomWindowPosition = "10";
+        $zoomType = "window";
+        break;
+    case "lens":
+        $zoomWindowPosition = "1";
+        $zoomType = "lens";
+        break;
+    default:
+        $zoomWindowPosition = "1";
+        $zoomType = "window";
+}
 $baseImageSize = array('x' => $config['cloudzoom']['width'], 'y' => $config['cloudzoom']['height'],);
 $galleryImageSize = array('x' => 95, 'y' => 60,);
 $zoomSize = array('x' => $config['cloudzoom']['big_image_width'], 'y' => $config['cloudzoom']['big_image_height'],);
 ?>
 <?php if ($baseImageFile): ?>
     <div class="product-image product-image-zoom">
-        <a href="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" class="cloud-zoom" id="cloud_zoom" data-rel="<?php echo implode($cloudZoom, ','); ?>" data-index="<?php echo $index++ ?>">
-            <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>">
-        </a>
+        <?php echo $this->helper('templatedesign')->getLabel($product); ?>
+        <img data-zoom-image="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>"   src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" class='elevatezoom'>
     </div>
 <?php endif ?>
 
 <?php if ($galleryImages): ?>
-    <div class="more-views">
+    <div class="more-views" id="gallery_01f">
         <ul>
             <?php if ($baseImageFile): ?>
-            <li>
-                <a href="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" class='cloud-zoom-gallery' data-index="<?php echo $index++ ?>" data-rel="useZoom: 'cloud_zoom', smallImage: '<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']); ?>' ">
-                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>">
-                </a>
-            </li>
+                <li>
+                    <a data-zoom-image="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($zoomSize['x'], $zoomSize['y']) ?>" class='elevatezoom-gallery' data-index="<?php echo $index++ ?>" data-image="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($baseImageSize['x'], $baseImageSize['y']); ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>">
+                    </a>
+                </li>
             <?php endif ?>
             <?php foreach ($galleryImages as $image): ?>
                 <li>
-                    <a href="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($zoomSize['x'], $zoomSize['y']) ?>" class='cloud-zoom-gallery' data-index="<?php echo $index++ ?>" data-rel="useZoom: 'cloud_zoom', smallImage: '<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($baseImageSize['x'], $baseImageSize['y']); ?>' ">
+                    <a data-zoom-image="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($zoomSize['x'], $zoomSize['y']) ?>" class='elevatezoom-gallery' data-index="<?php echo $index++ ?>" data-image="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($baseImageSize['x'], $baseImageSize['y']); ?>">
                         <img src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($galleryImageSize['x'], $galleryImageSize['y']) ?>" alt="<?php echo $this->htmlEscape($image->getLabel()) ?>">
                     </a>
                 </li>
             <?php endforeach ?>
         </ul>
     </div>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('.elevatezoom').elevateZoom({
+                //zoomActivation: 'hover', // Can also be click (PLACEHOLDER FOR NEXT VERSION)
+                zoomWindowWidth: <?php echo $config['cloudzoom']['zoom_width'] ?>,
+                zoomWindowHeight: <?php echo $config['cloudzoom']['zoom_height'] ?>,
+                //zoomWindowPosition: <?php echo $zoomWindowPosition ?>,
+                //zoomWindowBgColour: '#fff',
+                borderSize: 2,
+                showLens: true,
+                borderColour: '#f0f0f0',
+                lensBorderSize: 1,
+                lensBorderColour: '#000',
+                zoomType: '<?php echo $zoomType ?>', //window is default,  also "lens" available -
+                lensOpacity: <?php echo $config['cloudzoom']['lens_opacity'] ?>, //opacity of the lens
+                tintColour: '<?php echo $config['cloudzoom']['tint_color'] ?>', //default tint color, can be anything, red, #ccc, rgb(0,0,0)
+                tintOpacity: <?php echo $config['cloudzoom']['tint_opacity'] ?>, //opacity of the tint
+                gallery:'gallery_01f',
+                galleryActiveClass: 'active',
+                cursor:'pointer', // user should set to what they want the cursor as, if they have set a click function
+                responsive:true,
+                containLensZoom: true
+            });
+        });
+    </script>
     <?php
-
  endif ?>

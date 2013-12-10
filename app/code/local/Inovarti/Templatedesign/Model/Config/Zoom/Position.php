@@ -25,8 +25,8 @@ class Inovarti_Templatedesign_Model_Config_Zoom_Position
 	            'value'=>'left',
 	            'label' => Mage::helper('templatedesign')->__('Left')),
             array(
-	            'value'=>'inside',
-	            'label' => Mage::helper('templatedesign')->__('Inside')),
+	            'value'=>'lens',
+	            'label' => Mage::helper('templatedesign')->__('Lens')),
         );
     }
 
